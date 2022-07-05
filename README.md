@@ -5,7 +5,7 @@ Used to demultiplex an Illumina Hi-seq run using either one or two indexing prim
 Written for Python 3.5+
 ___
 ## Inputs:
-- Multiplexed SAM file with i7 barcodes stored in "BC:Z:" tags and i5 barcodes stored in "B2:Z" tags.
+- Multiplexed SAM file with i7 barcodes stored in "BC:Z:" tags and i5 barcodes stored in "B2:Z:" tags.
 - Tab-separated table with three columns: sample name, i7 sequence, i5 sequence
 
 ## Usage:
@@ -35,4 +35,4 @@ cd SAM_demultiplex
 python3 SAM_demultiplex.py -S test/test_file.sam -T test/test_table.tsv -O test/test_output
 ```
 
-You should see a folder with 12 files identical to the file found in ['test/test_output_validation'](test/test_output_validation). The 10 reads in the SAM file are assigned to sample_1 through sample_10, while sample_11.fastq and unassigned.fastq receive no reads.
+You should see a newly created folder with 12 files identical to the file found in ['test/test_output_validation'](test/test_output_validation). The 10 reads in the SAM file are assigned to sample_1 through sample_10, while sample_11.fastq and unassigned.fastq receive no reads.
